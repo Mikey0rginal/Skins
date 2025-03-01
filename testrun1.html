@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Mikeys Skins">
-    <meta property="og:color" content="7168eb">
+    <meta property="og:title" content="" id="og-title">
     <meta property="og:description" content="Check out the latest skins from Mikeys Skins!">
-    <meta property="og:image" content="https://i.imgur.com/CiVHfKg.jpeg">
-    <meta property="og:image:secure_url" content="https://i.imgur.com/CiVHfKg.jpeg">
+    <meta property="og:image" content="" id="og-image">
+    <meta property="og:image:secure_url" content="" id="og-image-secure-url">
     <meta property="og:url" content="https://mikey0rginal.github.io/Skins/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="https://i.imgur.com/wl3HPRF.png" type="image/x-icon">
     <title>Mikeys Skins</title>
     <style>
+        /* Styles here */
         * {
             margin: 0;
             padding: 0;
@@ -162,7 +162,7 @@
                 </div>
             </div>
             <p>-</p>
-           <p>Got Milk?<span style="color:#FF0000;"> [VITA]</span></p>
+            <p>Got Milk?<span style="color:#FF0000;"> [VITA]</span></p>
         </div>
         <div class="box">
             <img src="https://i.imgur.com/5odJGZC.jpeg" alt="Image 2" onclick="showModal('https://i.imgur.com/5odJGZC.jpeg')">
@@ -178,7 +178,7 @@
             <p>Pigs<span style="color:#FF0000;"> [LAR]</span></p>
         </div>
     </div>
-<h1> < </h1>
+    <h1> < </h1>
 
     <!-- Modal -->
     <div id="myModal" class="modal" onclick="closeModal()">
@@ -200,42 +200,25 @@
             var modal = document.getElementById("myModal");
             modal.style.display = "none";
         }
-    </script>
 
+        // Fetch the API and update Open Graph meta tags
+        fetch('https://mikey0rginal.github.io/Skins/api.json')
+            .then(response => response.json()) // Parse the JSON data from the API
+            .then(data => {
+                const embedData = data.Embed[0]; // Access the first object in the 'Embed' array
+                
+                // Extract 'Image' and 'Name' from the object
+                const skinName = embedData.Name;
+                const skinImage = embedData.Image;
 
-<script>
-        // Function to open the modal and display the clicked image
-        function showModal(imageSrc) {
-            var modal = document.getElementById("myModal");
-            var modalImage = document.getElementById("modalImage");
-            modal.style.display = "flex";
-            modalImage.src = imageSrc;
-        }
-
-        // Function to close the modal when clicked outside of the image or on the close button
-        function closeModal() {
-            var modal = document.getElementById("myModal");
-            modal.style.display = "none";
-        }
-    </script>
-
-    <!-- Discord Embed -->
-    <script type="application/json" id="discord-embed">
-    {
-      "embeds": [
-        {
-          "title": "Mikeys Skins!",
-          "description": "Check out the latest skins available!",
-          "color": 3447003,
-          "image": {
-            "url": "https://i.imgur.com/your-banner-image.jpeg"
-          },
-          "footer": {
-            "text": "Powered by Akuma Code"
-          }
-        }
-      ]
-    }
+                // Update the meta tags dynamically
+                document.getElementById('og-title').setAttribute('content', skinName);
+                document.getElementById('og-image').setAttribute('content', skinImage);
+                document.getElementById('og-image-secure-url').setAttribute('content', skinImage);
+            })
+            .catch(error => {
+                console.error('Error fetching the API data:', error);
+            });
     </script>
 </body>
 </html>
