@@ -2,7 +2,21 @@
     "Embed": [
         {
             "Image": "https://i.imgur.com/CiVHfKg.jpeg",
-            "Name": "Mikey's skins"
+            "Name": "Mikey's skins",
+        }
+    ],
+    "Images": [
+        {
+            "Box-1": "https://i.imgur.com/ndqkrsn.jpeg",
+            "Little-Key-Z": "https://i.imgur.com/JVkq6y4.jpeg",
+            "Little-image": "https://i.imgur.com/DQ9BW3i.jpeg"
+        }
+    ]
+    "Images2": [
+        {
+            "Box-2": "https://i.imgur.com/5odJGZC.jpeg",
+            "Little-Key-Z": "https://i.imgur.com/UErKua0.jpeg",
+            "Little-image": "https://i.imgur.com/aOsDUrU.jpeg"
         }
     ]
 }
