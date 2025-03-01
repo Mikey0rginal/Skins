@@ -1,8 +1,8 @@
 {
-    "embed": [
-  {
-      "Image": "https://i.imgur.com/CiVHfKg.jpeg",
-      "name": "Mikey's skins"
-  }
+    "Donation": [
+        {
+            "Image": "https://i.imgur.com/CiVHfKg.jpeg",
+            "Name": "Mikey's skins"
+        }
     ]
 }
